@@ -3,6 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seamless Scrolling Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Preloading the font to make sure it loads fast */
+        @font-face {
+            font-family: 'Arial';
+            font-display: swap;
+        }
+
+        .news-banner {
+            background-color: #222;
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .news-text-wrapper {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+        }
+
+        .news-text {
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .news-text span {
+            animation: color-change 3s infinite;
+        }
+
+        @keyframes color-change {
+            0% { color: red; }
+            25% { color: yellow; }
+            50% { color: blue; }
+            75% { color: green; }
+            100% { color: orange; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="news-banner">
+    <div class="news-text-wrapper">
+        <div class="news-text">
+            <span>All English slots are fully booked. Only Hindi and Bengali slots are available. Limited offer! Free Free Free! Book now before slots are over! Hurry up! Don't miss out!</span>
+        </div>
+        <!-- Duplicate the text here for seamless looping -->
+        <div class="news-text">
+            <span>All English slots are fully booked. Only Hindi and Bengali slots are available. Limited offer! Free Free Free! Book now before slots are over! Hurry up! Don't miss out!</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Motivational Appointment Form</title>
     <style>
         body {
